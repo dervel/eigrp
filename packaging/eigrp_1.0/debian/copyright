@@ -1,0 +1,22 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upsteam-Name: eigrp
+
+Files: libtelnet.c
+Copyright: 2011, Sean Middleditch
+License: GPL-2+
+
+Files: libtelnet.h
+Copyright: 2011, Sean Middleditch
+License: GPL-2+
+
+Files: libnetlink.c
+Copyright: 2011, Alexey Kuznetsov
+License: GPL-2+
+
+Files: libnetlink.h
+Copyright: 2011, Alexey Kuznetsov
+License: GPL-2+
+
+Files: *
+Copyright: 2015, Paraskeuas Karahatzis
+License: GPL-3+

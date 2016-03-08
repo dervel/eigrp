@@ -1,0 +1,5 @@
+/etc/eigrp/conf
+/etc/eigrp/conf_sample
+/etc/eigrp/eigrp
+/etc/eigrp/settings
+/etc/init.d/eigrp

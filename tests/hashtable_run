@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -Wall -g hashtable_tests.c ../src/hashtable.c ../src/utils.c -o hashtable -Wfatal-errors

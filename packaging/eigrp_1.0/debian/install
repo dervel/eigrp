@@ -1,0 +1,5 @@
+debian/extra/conf /etc/eigrp/
+debian/extra/conf_sample /etc/eigrp/
+debian/extra/settings /etc/eigrp/
+debian/init.d/eigrp /etc/init.d/
+debian/man/eigrp /etc/eigrp/

@@ -1,0 +1,204 @@
+==3661== Memcheck, a memory error detector
+==3661== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==3661== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==3661== Command: ./eigrp
+==3661== Parent PID: 3660
+==3661== 
+==3661== Conditional jump or move depends on uninitialised value(s)
+==3661==    at 0x54DAE2C: vfprintf (vfprintf.c:1642)
+==3661==    by 0x54E0DE8: printf (printf.c:33)
+==3661==    by 0x413CD2: parse_config_file (config_controller.c:445)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661==  Uninitialised value was created by a stack allocation
+==3661==    at 0x413C48: parse_config_file (config_controller.c:443)
+==3661== 
+==3661== Conditional jump or move depends on uninitialised value(s)
+==3661==    at 0x5504A11: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1294)
+==3661==    by 0x54DADE6: vfprintf (vfprintf.c:1642)
+==3661==    by 0x54E0DE8: printf (printf.c:33)
+==3661==    by 0x413CD2: parse_config_file (config_controller.c:445)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661==  Uninitialised value was created by a stack allocation
+==3661==    at 0x413C48: parse_config_file (config_controller.c:443)
+==3661== 
+==3661== Conditional jump or move depends on uninitialised value(s)
+==3661==    at 0x5504A1F: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1294)
+==3661==    by 0x54DADE6: vfprintf (vfprintf.c:1642)
+==3661==    by 0x54E0DE8: printf (printf.c:33)
+==3661==    by 0x413CD2: parse_config_file (config_controller.c:445)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661==  Uninitialised value was created by a stack allocation
+==3661==    at 0x413C48: parse_config_file (config_controller.c:443)
+==3661== 
+==3661== Syscall param write(buf) points to uninitialised byte(s)
+==3661==    at 0x5569620: __write_nocancel (syscall-template.S:81)
+==3661==    by 0x5504472: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1253)
+==3661==    by 0x5503B32: new_do_write (fileops.c:530)
+==3661==    by 0x55052A4: _IO_do_write@@GLIBC_2.2.5 (fileops.c:503)
+==3661==    by 0x55055F2: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:868)
+==3661==    by 0x54FBB31: puts (ioputs.c:42)
+==3661==    by 0x413391: handle_line (config_controller.c:198)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661==  Address 0x4022018 is not stack'd, malloc'd or (recently) free'd
+==3661==  Uninitialised value was created by a stack allocation
+==3661==    at 0x413C48: parse_config_file (config_controller.c:443)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x40D2DE: hash (hashtable.c:147)
+==3661==    by 0x40806F: init_keychain (eigrp_base.c:2081)
+==3661==    by 0x402E95: post_init (eigrp_base.c:119)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0xffefff388 is on thread 1's stack
+==3661==  3096 bytes below stack pointer
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x40D2DE: hash (hashtable.c:147)
+==3661==    by 0x407C94: init_interface (eigrp_base.c:1964)
+==3661==    by 0x402F13: post_init (eigrp_base.c:130)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0xffefff28e is on thread 1's stack
+==3661==  3282 bytes below stack pointer
+==3661== 
+==3661== Syscall param socketcall.setsockopt(optval) points to unaddressable byte(s)
+==3661==    at 0x557716A: setsockopt (syscall-template.S:81)
+==3661==    by 0x408F45: init_ip4 (eigrp_ip4.c:149)
+==3661==    by 0x407E80: init_interface (eigrp_base.c:2021)
+==3661==    by 0x402F13: post_init (eigrp_base.c:130)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a56d55 is 0 bytes after a block of size 5 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x414048: interface_com (config_controller.c:536)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x4C2C1A2: strlen (vg_replace_strmem.c:412)
+==3661==    by 0x40A1E6: compare (utils.c:40)
+==3661==    by 0x406923: vector_contains (eigrp_base.c:1474)
+==3661==    by 0x407416: init_eigrp_proccess (eigrp_base.c:1727)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0xffefff206 is on thread 1's stack
+==3661==  3346 bytes below stack pointer
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x4C2C1A2: strlen (vg_replace_strmem.c:412)
+==3661==    by 0x40A206: compare (utils.c:40)
+==3661==    by 0x406923: vector_contains (eigrp_base.c:1474)
+==3661==    by 0x407416: init_eigrp_proccess (eigrp_base.c:1727)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0xffefff206 is on thread 1's stack
+==3661==  3346 bytes below stack pointer
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x4C2C1B4: strlen (vg_replace_strmem.c:412)
+==3661==    by 0x40A315: equals (utils.c:62)
+==3661==    by 0x406E8C: register_static_route (eigrp_base.c:1600)
+==3661==    by 0x4074F7: init_eigrp_proccess (eigrp_base.c:1749)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a57084 is 0 bytes after a block of size 4 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x4147F2: ip_route_com (config_controller.c:710)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x4C2C1B4: strlen (vg_replace_strmem.c:412)
+==3661==    by 0x40A1F5: compare (utils.c:40)
+==3661==    by 0x40A334: equals (utils.c:63)
+==3661==    by 0x406E8C: register_static_route (eigrp_base.c:1600)
+==3661==    by 0x4074F7: init_eigrp_proccess (eigrp_base.c:1749)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a57084 is 0 bytes after a block of size 4 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x4147F2: ip_route_com (config_controller.c:710)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x4C2C1B4: strlen (vg_replace_strmem.c:412)
+==3661==    by 0x40A217: compare (utils.c:40)
+==3661==    by 0x40A334: equals (utils.c:63)
+==3661==    by 0x406E8C: register_static_route (eigrp_base.c:1600)
+==3661==    by 0x4074F7: init_eigrp_proccess (eigrp_base.c:1749)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a57084 is 0 bytes after a block of size 4 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x4147F2: ip_route_com (config_controller.c:710)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x5592E07: inet_pton4 (inet_pton.c:93)
+==3661==    by 0x5593032: inet_pton (inet_pton.c:59)
+==3661==    by 0x406DFE: register_static_route (eigrp_base.c:1587)
+==3661==    by 0x4074F7: init_eigrp_proccess (eigrp_base.c:1749)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a5751b is 0 bytes after a block of size 11 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x4147F2: ip_route_com (config_controller.c:710)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== Invalid read of size 1
+==3661==    at 0x54DAE2C: vfprintf (vfprintf.c:1642)
+==3661==    by 0x54E0DE8: printf (printf.c:33)
+==3661==    by 0x406F5C: register_static_route (eigrp_base.c:1617)
+==3661==    by 0x4074F7: init_eigrp_proccess (eigrp_base.c:1749)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661==  Address 0x5a5751b is 0 bytes after a block of size 11 alloc'd
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x4147F2: ip_route_com (config_controller.c:710)
+==3661==    by 0x4136EF: handle_line (config_controller.c:324)
+==3661==    by 0x4138C6: config_telnet (config_controller.c:365)
+==3661==    by 0x413C47: parse_config_file (config_controller.c:441)
+==3661==    by 0x402C76: main (eigrp_main.c:344)
+==3661== 
+==3661== 
+==3661== HEAP SUMMARY:
+==3661==     in use at exit: 2,804 bytes in 2 blocks
+==3661==   total heap usage: 129 allocs, 127 frees, 57,165 bytes allocated
+==3661== 
+==3661== 272 bytes in 1 blocks are possibly lost in loss record 1 of 2
+==3661==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==3661==    by 0x4010FD1: allocate_dtv (dl-tls.c:296)
+==3661==    by 0x40116DD: _dl_allocate_tls (dl-tls.c:460)
+==3661==    by 0x527BC27: allocate_stack (allocatestack.c:589)
+==3661==    by 0x527BC27: pthread_create@@GLIBC_2.2.5 (pthread_create.c:495)
+==3661==    by 0x40752E: init_eigrp_proccess (eigrp_base.c:1754)
+==3661==    by 0x402FD4: post_init (eigrp_base.c:158)
+==3661==    by 0x402C80: main (eigrp_main.c:345)
+==3661== 
+==3661== 2,532 bytes in 1 blocks are still reachable in loss record 2 of 2
+==3661==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3661==    by 0x40DE68: create_empty_packet (packet_factory.c:222)
+==3661==    by 0x40982A: hello_packet_thread_ip4 (eigrp_ip4.c:376)
+==3661==    by 0x527B0A3: start_thread (pthread_create.c:309)
+==3661== 
+==3661== LEAK SUMMARY:
+==3661==    definitely lost: 0 bytes in 0 blocks
+==3661==    indirectly lost: 0 bytes in 0 blocks
+==3661==      possibly lost: 272 bytes in 1 blocks
+==3661==    still reachable: 2,532 bytes in 1 blocks
+==3661==         suppressed: 0 bytes in 0 blocks
+==3661== 
+==3661== For counts of detected and suppressed errors, rerun with: -v
+==3661== ERROR SUMMARY: 82 errors from 15 contexts (suppressed: 0 from 0)

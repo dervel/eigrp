@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc netlink_test.c netlink.c libnetlink.c vector.c utils.c -o netlinktest
+read -p "Press any key to close"

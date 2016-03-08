@@ -1,0 +1,56 @@
+./" Manpage for eigrp
+./" Contact dervelakos.madlax@gmail.com to correct errors or typos.
+.TH eigrp 8 "01 January 2016" "1.0" "eigrp man page"
+.SH NAME
+eigrp /- eigrp routing protocol
+.SH SYNOPSIS
+eigrp [-start_daemon] [-stop] [--clear-routes] [-log=<directory_path>] [-conf=<path/config_file>] [-var=<path/settings_file>]
+.SH DESCRIPTION
+eigrp is a routing daemon for CISCOs eigrp routing protocol. Compatible with IPv4 routes only.
+.SH OPTIONS
+.TP
+-start_daemon
+If specified, this parameter causes the routing protocol to operate as a
+daemon. That is, it detaches itself and runs in the background.
+.TP
+-stop		
+If this parameter is specified it will signal the routing daemon to
+terminate, freeing resources and close.
+.TP
+--clear-routes
+If this parameter is specified it will remove any leftover routing in the
+routing table and immediately terminate, ingoring any other options. The
+routes removed will be based on the protocol on which the routes were
+inserted. Protocol number is configured through the settings file
+(Default: 20).
+.TP
+-log=<directory_path>
+If this parameter is specified it will start logging events. The 
+parameter directory_path must be a directory and not a file. Files will
+be created and named after the starting time of the proccess. If only 
+-log is specified it will log files at the default directory 
+"/etc/eigrp/logs/"
+.TP
+-conf=<path/config_file>
+If this parameter is specified it will read the configuration file from the path
+given. The default configuration file is located at "/etc/eigrp/conf"
+.TP
+-var=<path/settings_file>
+If this parameter is specified it will read the settings file from the path 
+given. This file is optional if it does not exist it will use the default 
+values. The default path is "etc/eigrp/settings"
+.SH FILES
+.TP
+/etc/eigrp/conf
+Configuration file for the routing daemon. This is the startup_config in
+terms of cisco routers.
+.TP
+/etc/eigrp/settings
+Settings file for some extra changes (telnet port, route protocol, route
+table to use). This file is completely optional.
+.SH VERSION
+This man page is correct for version 1 of the eigrp routing daemon
+.SH AUTHOR
+Paraskeuas Karahatzis (dervelakos.madlax@gmail.com)
+
+	

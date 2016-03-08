@@ -1,0 +1,76 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package eigrp
+dpkg-buildpackage: source version 1.0-1
+dpkg-buildpackage: source distribution UNRELEASED
+dpkg-buildpackage: source changed by Paraskevas Karachatzis <dervelakos.madlax@gmail.com>
+ dpkg-source --before-build eigrp_1.0
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/dervel/test/eigrp_1.0'
+rm -f eigrp
+make[1]: Leaving directory '/home/dervel/test/eigrp_1.0'
+   dh_clean
+ dpkg-source -b eigrp_1.0
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building eigrp using existing ./eigrp_1.0.orig.tar.gz
+dpkg-source: info: building eigrp in eigrp_1.0-1.debian.tar.xz
+dpkg-source: info: building eigrp in eigrp_1.0-1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory '/home/dervel/test/eigrp_1.0'
+gcc -pthread -g eigrp_main.c eigrp_base.c eigrp_ip4.c eigrp_ip6.c utils.c vector.c linkedlist.c eigrp_prot.c hashtable.c packet_factory.c collection.c netlink.c telnet.c libnetlink.c libtelnet.c config_controller.c -o eigrp -lcrypt
+make[1]: Leaving directory '/home/dervel/test/eigrp_1.0'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/dervel/test/eigrp_1.0'
+/usr/bin/make DESTDIR=$(pwd)/debian/eigrp prefix=/usr install
+make[2]: Entering directory '/home/dervel/test/eigrp_1.0'
+install eigrp /home/dervel/test/eigrp_1.0/debian/eigrp/usr/bin
+make[2]: Leaving directory '/home/dervel/test/eigrp_1.0'
+make[1]: Leaving directory '/home/dervel/test/eigrp_1.0'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_usrlocal
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `eigrp' in `../eigrp_1.0-1_amd64.deb'.
+ dpkg-genchanges  >../eigrp_1.0-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build eigrp_1.0
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: eigrp source: maintainer-script-lacks-debhelper-token debian/eigrp.postrm
+W: eigrp source: maintainer-script-lacks-debhelper-token debian/eigrp.postinst
+W: eigrp source: missing-license-paragraph-in-dep5-copyright gpl-2+ (paragraph at line 16)
+W: eigrp source: missing-license-paragraph-in-dep5-copyright gpl-3+ (paragraph at line 20)
+W: eigrp source: ancient-standards-version 3.9.4 (current is 3.9.6)
+W: eigrp: hardening-no-relro usr/bin/eigrp
+W: eigrp: new-package-should-close-itp-bug
+E: eigrp: copyright-should-refer-to-common-license-file-for-gpl
+W: eigrp: script-in-etc-init.d-not-registered-via-update-rc.d etc/init.d/eigrp
+W: eigrp: binary-without-manpage usr/bin/eigrp
+Finished running lintian.

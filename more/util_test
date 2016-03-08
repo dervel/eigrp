@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc utils_test.c utils.c -o utilstest
+read -p "Press any key to close"

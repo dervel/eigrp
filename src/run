@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc -pthread -Wall -g eigrp_main.c eigrp_base.c eigrp_ip4.c eigrp_ip6.c utils.c vector.c linkedlist.c eigrp_prot.c hashtable.c packet_factory.c collection.c netlink.c telnet.c config_controller.c libnetlink.c libtelnet.c -o eigrp -lcrypt -Wfatal-errors
+read -p "Press any key to close"

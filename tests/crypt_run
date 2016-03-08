@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -Wall -g crypt_tests.c -o crypt -lcrypt -Wfatal-errors

@@ -1,0 +1,52 @@
+#! /bin/bash
+if [ true != "$INIT_D_SCRIPT_SOURCED" ] ; then
+    set "$0" "$@"; INIT_D_SCRIPT_SOURCED=true . /lib/init/init-d-script
+fi
+# /etc/init.d/eigrp
+
+### BEGIN INIT INFO
+# Provides:          eigrp
+# Required-Start:    $remote_fs $network $named $time $syslog
+# Required-Stop:     $remote_fs $network $named $time $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:       EIGRP routing daemon
+### END INIT INFO
+
+# chkconfig: 2345 95 05
+# description: EIGRP routing daemon
+#
+# processname: eigrp
+# config: /etc/eigrp/config
+# pidfile: /var/run/eigrp.pid
+. /etc/init.d/functions
+
+RETVAL=0
+prog="eigrp"
+
+start(){
+	initlog -c "echo -n Starting eigrp:"
+	/usr/bin/eigrp -start_daemon
+	echo
+}
+
+stop(){
+	initlog -c "echo -n Stopping eigrp:"
+	/usr/bin/eigrp -stop
+	echo
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+
+	*)
+		echo $"Usage: $0 {start|stop}"
+		RETVAL=1
+esac
+exit $RETVAL
+	

@@ -1,0 +1,10 @@
+cp /etc/eigrp/eigrp /usr/share/man/man8/eigrp.8
+gzip /usr/share/man/man8/eigrp.8
+rm /etc/eigrp/eigrp
+
+echo "Note: ip packet forwarding is disabled by default"
+echo "uncomment or append the following line from /etc/sysctl.conf"
+echo "net.ipv4.ip_foward=1"
+echo "to enable packet fowarding.Then reboot or use the following command"
+echo "sysctl -p /etc/sysctl.conf"
+exit 0

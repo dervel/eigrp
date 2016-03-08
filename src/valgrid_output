@@ -1,0 +1,101 @@
+==3837== Memcheck, a memory error detector
+==3837== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==3837== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==3837== Command: ./eigrp
+==3837== Parent PID: 3836
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52D3DCC: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52FD9C1: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1294)
+==3837==    by 0x52D3D86: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52FE4EB: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:859)
+==3837==    by 0x52FF278: _IO_default_xsputn (genops.c:480)
+==3837==    by 0x52FD991: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1345)
+==3837==    by 0x52D3D86: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52FE518: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:867)
+==3837==    by 0x52FF278: _IO_default_xsputn (genops.c:480)
+==3837==    by 0x52FD991: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1345)
+==3837==    by 0x52D3D86: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52FF27C: _IO_default_xsputn (genops.c:480)
+==3837==    by 0x52FD991: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1345)
+==3837==    by 0x52D3D86: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Syscall param write(buf) points to uninitialised byte(s)
+==3837==    at 0x5364E50: __write_nocancel (syscall-template.S:81)
+==3837==    by 0x52FD422: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1253)
+==3837==    by 0x52FCAE2: new_do_write (fileops.c:530)
+==3837==    by 0x52FE254: _IO_do_write@@GLIBC_2.2.5 (fileops.c:503)
+==3837==    by 0x52FE5A2: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:868)
+==3837==    by 0x52F4AD1: puts (ioputs.c:42)
+==3837==    by 0x41331A: handle_line (config_controller.c:198)
+==3837==    by 0x41384F: config_telnet (config_controller.c:365)
+==3837==    by 0x413BD0: parse_config_file (config_controller.c:441)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Address 0x4022012 is not stack'd, malloc'd or (recently) free'd
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Conditional jump or move depends on uninitialised value(s)
+==3837==    at 0x52FD9CF: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1294)
+==3837==    by 0x52D3D86: vfprintf (vfprintf.c:1642)
+==3837==    by 0x52D9D88: printf (printf.c:33)
+==3837==    by 0x413C5B: parse_config_file (config_controller.c:445)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837==  Uninitialised value was created by a stack allocation
+==3837==    at 0x413BD1: parse_config_file (config_controller.c:443)
+==3837== 
+==3837== Invalid read of size 1
+==3837==    at 0x40D24B: hash (hashtable.c:147)
+==3837==    by 0x407F2A: init_keychain (eigrp_base.c:2082)
+==3837==    by 0x402D35: post_init (eigrp_base.c:119)
+==3837==    by 0x402B20: main (eigrp_main.c:345)
+==3837==  Address 0xffefff33f is on thread 1's stack
+==3837==  3169 bytes below stack pointer
+==3837== 
+==3837== Syscall param socketcall.setsockopt(optval) points to unaddressable byte(s)
+==3837==    at 0x537299A: setsockopt (syscall-template.S:81)
+==3837==    by 0x408E00: init_ip4 (eigrp_ip4.c:149)
+==3837==    by 0x407D3B: init_interface (eigrp_base.c:2022)
+==3837==    by 0x402DB3: post_init (eigrp_base.c:130)
+==3837==    by 0x402B20: main (eigrp_main.c:345)
+==3837==  Address 0x56375d5 is 0 bytes after a block of size 5 alloc'd
+==3837==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==3837==    by 0x413FD1: interface_com (config_controller.c:536)
+==3837==    by 0x413678: handle_line (config_controller.c:324)
+==3837==    by 0x41384F: config_telnet (config_controller.c:365)
+==3837==    by 0x413BD0: parse_config_file (config_controller.c:441)
+==3837==    by 0x402B16: main (eigrp_main.c:344)
+==3837== 

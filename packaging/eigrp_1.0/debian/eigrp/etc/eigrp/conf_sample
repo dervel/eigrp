@@ -1,0 +1,39 @@
+interface wlan0
+speed 100000
+delay 100
+
+
+
+router eigrp 3
+redistribute static
+network 192.168.1.0 0.0.0.255
+network 192.168.10.0 0.0.0.255
+network 10.0.10.0 0.0.0.255
+network 10.0.10.0 0.0.0.254
+passive-interface wlan0
+traffic-share balanced
+exit
+router eigrp 3
+
+interface eth0
+ip authentication mode eigrp 3 md5
+ip authentication key-chain eigrp 3 Mike
+speed 100000
+delay 100
+
+interface eth1
+speed 100000
+delay 100
+exit
+
+ip route 10.40.100.0 255.255.255.0 eth0
+ip route 10.40.101.0 255.255.255.0 192.168.1.1
+key chain Kotol
+key 1
+key-string billyissalty
+hostname dervel
+key chain Mike
+key 1
+key-string 0 kappa
+key 2
+key-string Mike

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 10 Jun 2015 12:03:59 -0400
+Source: eigrp
+Binary: eigrp
+Architecture: source amd64
+Version: 1.0-1
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Paraskevas Karachatzis <dervelakos.madlax@gmail.com>
+Changed-By: Paraskevas Karachatzis <dervelakos.madlax@gmail.com>
+Description:
+ eigrp      - Routing daemon for the eigrp protocol
+Changes:
+ eigrp (1.0-1) UNRELEASED; urgency=low
+ .
+   * Initial release.
+Checksums-Sha1:
+ 1bef1a9d3763421ed3ea3f786771578934c6f9d5 752 eigrp_1.0-1.dsc
+ 22c1bbea1072a2303b1fd87e5f8c7a5e46aba6e2 69926 eigrp_1.0.orig.tar.gz
+ 19bc7e654227792f3fe51b45c044d1aa8160934d 3276 eigrp_1.0-1.debian.tar.xz
+ 018f98e4387057c2ee7d54fa2431f0363df92ac9 46050 eigrp_1.0-1_amd64.deb
+Checksums-Sha256:
+ 464b4805b45965dd2e1a634f1f07e082af8c601d744ed7ac1f101bf2c7cd9f87 752 eigrp_1.0-1.dsc
+ 31ca197b9733aeb96214c3b1ae6bc4a4e5d6d1f54f694faa896175050d8aec65 69926 eigrp_1.0.orig.tar.gz
+ 3743ecb5ef2c3e3d586fb8c86924c1fd5876816150948bb63bb57f0a4b6b4a59 3276 eigrp_1.0-1.debian.tar.xz
+ f16e2a3aa41d543042ad7b5dba41245e9f7191c0c334bfcb040521e4c5728d91 46050 eigrp_1.0-1_amd64.deb
+Files:
+ 2b65d16ad97b644342990301c5c7056a 752 net optional eigrp_1.0-1.dsc
+ 5ab4c1686725203b4efe2722047afa61 69926 net optional eigrp_1.0.orig.tar.gz
+ 40814600baf1e015d38fddd80c378970 3276 net optional eigrp_1.0-1.debian.tar.xz
+ 9133d8e95940014730944e4d28a69ab6 46050 net optional eigrp_1.0-1_amd64.deb

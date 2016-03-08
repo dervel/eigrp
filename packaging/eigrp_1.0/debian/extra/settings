@@ -1,0 +1,15 @@
+; Character ';' is a comment
+; If this file is full of comments, or doesn't exist at all there is no problem
+; the default values will be used
+
+;Port for the telnet. Default: 11203
+
+	;telnet_port=11203
+
+;Routing table to add the routes. Default: RT_TABLE_MAIN
+
+	;eigrp_routing_table=X
+
+;Protocol number to use for the route entries. Default: 20
+
+	;eigrp_rtprot=20

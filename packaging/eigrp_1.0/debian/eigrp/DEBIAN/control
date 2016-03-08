@@ -1,0 +1,16 @@
+Package: eigrp
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Paraskevas Karachatzis <dervelakos.madlax@gmail.com>
+Installed-Size: 193
+Depends: libc6 (>= 2.14)
+Section: net
+Priority: optional
+Description: Routing daemon for the eigrp protocol
+ The routing daemon was build to resemble the original eigrp configuration and
+ workflow of a Cisco router. It uses the Ciscos eigrp protocol and can
+ communicate with Cisco routers. Setting it up is easy if you know how to
+ configure a cisco router as all the commands are similar. It uses a conf file
+ as a startup-config from which it loads the configuration. While the daemon
+ is running it will search for neighbors at the configured interfaces and add
+ or remove routes from the routing table.

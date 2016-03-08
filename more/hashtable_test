@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc hashtable_test.c hashtable.c -o hashtest
+read -p "Press any key to close"

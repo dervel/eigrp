@@ -1,0 +1,19 @@
+Source: eigrp
+Maintainer: Paraskevas Karachatzis <dervelakos.madlax@gmail.com>
+Section: net
+Priority: optional
+Standards-Version: 3.9.4
+Build-Depends: debhelper (>=9)
+
+Package: eigrp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: Routing daemon for the eigrp protocol
+ The routing daemon was build to resemble the original eigrp configuration and
+ workflow of a Cisco router. It uses the Ciscos eigrp protocol and can
+ communicate with Cisco routers. Setting it up is easy if you know how to
+ configure a cisco router as all the commands are similar. It uses a conf file
+ as a startup-config from which it loads the configuration. While the daemon
+ is running it will search for neighbors at the configured interfaces and add
+ or remove routes from the routing table.
+

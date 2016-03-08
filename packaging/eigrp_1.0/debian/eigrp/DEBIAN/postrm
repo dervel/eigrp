@@ -1,0 +1,4 @@
+rm -R /etc/eigrp
+rm /usr/share/man/man8/eigrp.8.gz
+rm /etc/init.d/eigrp
+exit 0
